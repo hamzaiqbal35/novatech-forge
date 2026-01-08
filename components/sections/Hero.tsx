@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react"
 

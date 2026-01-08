@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import Image from "next/image"
 
-import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 

@@ -41,7 +41,7 @@ export default function ProcessPage() {
                                 <CardTitle>Ownership</CardTitle>
                             </CardHeader>
                             <CardContent className="text-muted-foreground">
-                                We don't just take orders. We act as your technical partner, pushing back on bad ideas and suggesting better ones.
+                                We don&apos;t just take orders. We act as your technical partner, pushing back on bad ideas and suggesting better ones.
                             </CardContent>
                         </Card>
                     </div>

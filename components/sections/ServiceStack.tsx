@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Code2, Brain, Smartphone, Server } from "lucide-react"
+import { ArrowUpRight, Code2, Brain, Server } from "lucide-react"
 
 const stacks = [
     {
@@ -11,7 +11,8 @@ const stacks = [
         description: "Creating visually stunning and functionally robust websites driving online success.",
         tech: "PHP Laravel • MERN Stack • Next.js",
         icon: Code2,
-        gradient: "from-blue-600/20 to-cyan-500/20",
+        image: "/images/service-web-dev.png",
+        gradient: "from-blue-600/90 to-cyan-500/90",
         border: "group-hover:border-blue-500/50",
         text_gradient: "from-blue-400 to-cyan-300"
     },
@@ -21,7 +22,8 @@ const stacks = [
         description: "Leveraging cutting-edge artificial intelligence to automate and optimize business logic.",
         tech: "Python • TensorFlow • OpenAI",
         icon: Brain,
-        gradient: "from-purple-600/20 to-pink-500/20",
+        image: "/images/service-ai-ml.png",
+        gradient: "from-purple-600/90 to-pink-500/90",
         border: "group-hover:border-purple-500/50",
         text_gradient: "from-purple-400 to-pink-300"
     },
@@ -32,7 +34,8 @@ const stacks = [
         description: "Scalable backend architectures for high-traffic and data-intensive applications.",
         tech: "AWS • Docker • Kubernetes",
         icon: Server,
-        gradient: "from-orange-600/20 to-red-500/20",
+        image: "/images/service-enterprise.png",
+        gradient: "from-orange-600/90 to-red-500/90",
         border: "group-hover:border-orange-500/50",
         text_gradient: "from-orange-400 to-red-300"
     },
@@ -55,11 +58,14 @@ export function ServiceStack() {
                                 className={`relative group cursor-pointer overflow-hidden rounded-3xl border bg-card transition-all duration-500 ease-in-out ${isActive ? "lg:flex-[3]" : "lg:flex-[1] hover:lg:flex-[1.2]"
                                     } ${isActive ? "flex-[3]" : "flex-[1]"}`}
                             >
-                                {/* Background Gradient */}
-                                <div
-                                    className={`absolute inset-0 bg-gradient-to-br ${stack.gradient} opacity-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "group-hover:opacity-30"
-                                        }`}
-                                />
+                                {/* Background Image */}
+                                <div className="absolute inset-0">
+                                    <div
+                                        className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ${isActive ? "scale-110 opacity-30" : "scale-100 opacity-0 group-hover:opacity-10"}`}
+                                        style={{ backgroundImage: `url(${stack.image})` }}
+                                    />
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${stack.gradient} opacity-0 transition-opacity duration-500 ${isActive ? "opacity-20" : "group-hover:opacity-10"}`} />
+                                </div>
 
                                 {/* Content Container */}
                                 <div className="relative h-full flex flex-col justify-between p-6 md:p-8">

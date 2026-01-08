@@ -14,7 +14,7 @@ export function CTA() {
                             Ready to Transform Your Business?
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Schedule a free 30-minute consultation with our lead architect. We'll discuss your challenges and outline a roadmap for success.
+                            Schedule a free 30-minute consultation with our lead architect. We&apos;ll discuss your challenges and outline a roadmap for success.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Button size="lg" className="h-14 px-8 text-lg">

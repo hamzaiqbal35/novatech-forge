@@ -2,7 +2,6 @@
 
 import { Container } from "@/components/ui/container"
 import { PageHeader } from "@/components/ui/page-header"
-import Image from "next/image"
 
 const values = [
     {
@@ -37,10 +36,10 @@ export default function AboutPage() {
                                     NovaTech Forge was founded on a simple premise: Most agencies overpromise and underdeliver. We wanted to change that.
                                 </p>
                                 <p>
-                                    We are a collective of senior developers, system architects, and UX designers who have tired of the "churn and burn" model. We take on fewer clients so we can go deeper with each one.
+                                    We are a collective of senior developers, system architects, and UX designers who have tired of the &quot;churn and burn&quot; model. We take on fewer clients so we can go deeper with each one.
                                 </p>
                                 <p>
-                                    Our goal isn't just to launch your product—it's to build a technical foundation that serves your business for years to come.
+                                    Our goal isn&apos;t just to launch your product—it&apos;s to build a technical foundation that serves your business for years to come.
                                 </p>
                             </div>
                         </div>

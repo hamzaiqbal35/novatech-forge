@@ -105,7 +105,7 @@ export default function ServicesPage() {
                         <div className="space-y-4 max-w-2xl">
                             <h2 className="text-3xl font-bold tracking-tight">Need something else?</h2>
                             <p className="text-primary-foreground/80 text-lg">
-                                We also handle DevOps, cloud infrastructure, and technical consulting. Let's talk about your unique challenge.
+                                We also handle DevOps, cloud infrastructure, and technical consulting. Let&apos;s talk about your unique challenge.
                             </p>
                         </div>
                         <Button variant="secondary" size="lg" className="shrink-0" asChild>
