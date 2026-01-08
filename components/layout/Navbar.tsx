@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -20,11 +21,12 @@ const navItems = [
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false)
+    const pathname = usePathname()
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <Container>
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-18 md:h-25 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <Link href="/" className="flex items-center space-x-2">
                             <Image
@@ -32,23 +34,29 @@ export function Navbar() {
                                 alt="NovaTech Forge Logo"
                                 width={220}
                                 height={220}
-                                className="object-contain rounded p-0.5"
+                                className="object-contain h-28 md:h-38 w-auto"
+                                priority
                             />
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center gap-6">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                        <Button size="sm">Book a Consultation</Button>
+                    <nav className="hidden md:flex items-center gap-8">
+                        {navItems.map((item) => {
+                            const isActive = pathname === item.href
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary font-semibold" : "text-muted-foreground"}`}
+                                >
+                                    {item.name}
+                                </Link>
+                            )
+                        })}
+                        <Button size="sm" asChild>
+                            <Link href="/contact">Book a Consultation</Link>
+                        </Button>
                     </nav>
 
                     {/* Mobile Menu Toggle */}
@@ -72,16 +80,19 @@ export function Navbar() {
                     >
                         <Container className="py-4">
                             <nav className="flex flex-col gap-4">
-                                {navItems.map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="text-sm font-medium text-foreground/80 hover:text-primary"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
+                                {navItems.map((item) => {
+                                    const isActive = pathname === item.href
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary font-semibold" : "text-foreground/80"}`}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    )
+                                })}
                                 <Button className="w-full">Book a Consultation</Button>
                             </nav>
                         </Container>
