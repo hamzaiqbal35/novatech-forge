@@ -3,6 +3,7 @@
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CTA() {
     return (
@@ -17,12 +18,16 @@ export function CTA() {
                             Schedule a free 30-minute consultation with our lead architect. We&apos;ll discuss your challenges and outline a roadmap for success.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button size="lg" className="h-14 px-8 text-lg">
-                                Book Your Free Consultation
-                                <ArrowRight className="ml-2 h-5 w-5" />
+                            <Button size="lg" className="h-14 px-8 text-lg" asChild>
+                                <Link href="/contact">
+                                    Book Your Free Consultation
+                                    <ArrowRight className="ml-2 h-5 w-5" />
+                                </Link>
                             </Button>
-                            <Button size="lg" variant="outline" className="h-14 px-8 text-lg bg-background">
-                                View Our Portfolio
+                            <Button size="lg" variant="outline" className="h-14 px-8 text-lg bg-background" asChild>
+                                <Link href="/work">
+                                    View Our Portfolio
+                                </Link>
                             </Button>
                         </div>
                         <p className="text-sm text-muted-foreground pt-4">

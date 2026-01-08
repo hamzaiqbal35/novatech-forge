@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react"
 
@@ -49,12 +50,16 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="flex flex-col sm:flex-row gap-4"
                         >
-                            <Button size="lg" className="h-12 px-8 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
-                                Book a Free Consultation
-                                <ArrowRight className="ml-2 h-4 w-4" />
+                            <Button size="lg" className="h-12 px-8 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all" asChild>
+                                <Link href="/contact">
+                                    Book a Free Consultation
+                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
                             </Button>
-                            <Button size="lg" variant="outline" className="h-12 px-8 text-base backdrop-blur-sm bg-background/50">
-                                View Our Work
+                            <Button size="lg" variant="outline" className="h-12 px-8 text-base backdrop-blur-sm bg-background/50" asChild>
+                                <Link href="/work">
+                                    View Our Work
+                                </Link>
                             </Button>
                         </motion.div>
 
